@@ -50,6 +50,8 @@ event; they are not a strictly ordered, session-scoped funnel.
 
 ### Device conversion
 
+![Viewer-to-purchase conversion by device](charts/device-conversion.png)
+
 | Device | Product viewers | Cart users | Purchasers | Viewer-to-purchase |
 | --- | ---: | ---: | ---: | ---: |
 | Desktop | 36,323 | 7,384 | 2,541 | 7.00% |
