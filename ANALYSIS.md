@@ -73,6 +73,8 @@ November-through-January sample period.
 
 ### Traffic acquisition
 
+![Revenue by first-user acquisition source](charts/traffic-acquisition.png)
+
 Google organic produced the most recorded revenue ($95,775), followed by
 direct traffic ($79,650). Referral traffic from the merchandise store domain
 reported a 2.18% user conversion rate. An obfuscated `(data deleted)` segment
