@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ga4-bigquery-mcp"
+version = "0.1.0"
+description = "An MCP server for exploring the public GA4 ecommerce dataset in BigQuery"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Suyog Shah" }]
+dependencies = [
+  "google-cloud-bigquery>=3.30,<4",
+  "mcp[cli]>=2,<3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+ga4-bigquery-mcp = "ga4_bigquery_mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ga4_bigquery_mcp"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
