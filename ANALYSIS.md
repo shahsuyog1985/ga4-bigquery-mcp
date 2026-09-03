@@ -64,6 +64,8 @@ not be treated as conclusive without statistical testing.
 
 ### Product performance
 
+![Top products by purchase revenue](charts/top-products.png)
+
 The Google Zip Hoodie F/C generated the most item revenue ($13,788), while
 Super G Unisex Joggers sold the most units (308). Hoodies, sweatshirts, fleece,
 and jackets dominate the top ten, a pattern consistent with the
