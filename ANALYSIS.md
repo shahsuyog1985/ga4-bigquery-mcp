@@ -32,6 +32,8 @@ events appear, which suggests incomplete or unusual list-view tracking.
 
 ### Ecommerce funnel reach
 
+![GA4 ecommerce funnel reach](charts/funnel-reach.png)
+
 | Step | Users | Share of product viewers |
 | --- | ---: | ---: |
 | View item | 61,252 | 100.00% |
@@ -92,4 +94,3 @@ Run the numbered queries in [`sql/`](sql/) in ascending order using BigQuery.
 Check the bytes-processed estimate before each run. The MCP server provides
 related tools for repeatable conversational analysis with a default 2 GiB
 per-query safety cap.
-

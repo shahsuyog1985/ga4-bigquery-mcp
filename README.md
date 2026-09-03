@@ -6,6 +6,8 @@ ecommerce sample in BigQuery through safe, predefined tools.
 This repository also includes a reproducible
 [GA4 ecommerce case study](ANALYSIS.md) and its six numbered [SQL queries](sql/).
 
+![GA4 ecommerce funnel reach](charts/funnel-reach.png)
+
 ## Features
 
 - Ecommerce overview: events, users, purchases, and revenue
