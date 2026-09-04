@@ -1,12 +1,28 @@
-# GA4 BigQuery MCP
+# GA4 BigQuery (AI-powered) Analytics Server
 
-An MCP server that lets AI assistants analyze the public Google Analytics 4
-ecommerce sample in BigQuery through safe, predefined tools.
+An **AI-powered analytics server** that helps assistants analyze GA4 ecommerce data in BigQuery through **safe, predefined tools**.
 
-This repository also includes a reproducible
-[GA4 ecommerce case study](ANALYSIS.md) and its six numbered [SQL queries](sql/).
+Under the hood, this is implemented as an **MCP server** so compatible AI assistants can call vetted analytics tools (instead of running arbitrary queries).
+
+This repository also includes a reproducible [GA4 ecommerce case study](ANALYSIS.md) and its six numbered [SQL queries](sql/).
 
 ![GA4 ecommerce funnel reach](charts/funnel-reach.png)
+
+## Portfolio highlights (from the case study)
+
+Using the public GA4 obfuscated ecommerce sample (2020-11-01 → 2021-01-31):
+
+- Funnel reach (user event reach): **View item → Purchase: 7.21%** (4,419 / 61,252)
+- Biggest reach loss: **View item → Add to cart** (20.48% of viewers reached cart)
+- Top acquisition sources by revenue (first-user source): **Google organic ($95,775)** and **Direct ($79,650)**
+
+> Note: This is **obfuscated sample data** and may contain placeholder/inconsistent values. Use the analysis patterns and approach, not the raw numbers, for business decisions.
+
+## What to review first (recruiters / interviewers)
+
+1. Read the narrative: [ANALYSIS.md](ANALYSIS.md)
+2. Run the numbered queries: [sql/](sql/) (01 → 06)
+3. View visuals used in the write-up: [charts/](charts/)
 
 ## Features
 
@@ -17,8 +33,7 @@ This repository also includes a reproducible
 - Checkout funnel counts
 - Parameterized queries and strict date validation
 
-The default dataset is
-`bigquery-public-data.ga4_obfuscated_sample_ecommerce`, covering 2020-11-01
+The default dataset is `bigquery-public-data.ga4_obfuscated_sample_ecommerce`, covering 2020-11-01
 through 2021-01-31. It is obfuscated sample data and may contain placeholder or
 internally inconsistent values.
 
@@ -31,64 +46,3 @@ internally inconsistent values.
 ```powershell
 gcloud auth application-default login
 gcloud auth application-default set-quota-project YOUR_PROJECT_ID
-```
-
-## Installation
-
-```powershell
-python -m venv .venv
-.venv\Scripts\Activate.ps1
-python -m pip install -e ".[dev]"
-```
-
-Set your Google Cloud project for the current terminal:
-
-```powershell
-$env:GOOGLE_CLOUD_PROJECT = "YOUR_PROJECT_ID"
-```
-
-## Run and inspect
-
-```powershell
-mcp dev src/ga4_bigquery_mcp/server.py
-```
-
-Or run the stdio server directly:
-
-```powershell
-ga4-bigquery-mcp
-```
-
-## Example prompts
-
-- Give me an ecommerce overview for the full sample period.
-- Show daily revenue during December 2020.
-- What were the top 10 products by revenue?
-- Which acquisition sources brought the most users?
-- Show the checkout funnel for January 2021.
-
-## Use another GA4 export
-
-Set `GA4_BIGQUERY_DATASET` to `project_id.dataset_id`. The export must use the
-standard GA4 `events_*` schema. Update the supported date bounds in
-`analytics.py` when using a dataset outside the sample period.
-
-## Security and cost
-
-- No credential files belong in this repository.
-- Queries use table suffixes so only the requested dates are scanned.
-- Each query has a 2 GiB maximum-bytes-billed cap by default and is rejected if
-  it would exceed that limit.
-- Tool inputs are validated and values are sent as BigQuery parameters.
-- Review estimated bytes in BigQuery and configure billing alerts before using
-  large production exports.
-
-## Tests
-
-```powershell
-pytest
-```
-
-## License
-
-MIT
