@@ -50,7 +50,7 @@ event; they are not a strictly ordered, session-scoped funnel.
 
 ### Device conversion
 
-![Viewer-to-purchase conversion by device](charts/<your-device-chart-file>.png)
+![Viewer-to-purchase conversion by device](charts/device-conversion.png)
 
 | Device | Product viewers | Cart users | Purchasers | Viewer-to-purchase |
 | --- | ---: | ---: | ---: | ---: |
@@ -64,7 +64,7 @@ not be treated as conclusive without statistical testing.
 
 ### Product performance
 
-![Top products by purchase revenue](charts/<your-top-products-file>.png)
+![Top products by purchase revenue](charts/top-products.png)
 
 The Google Zip Hoodie F/C generated the most item revenue ($13,788), while
 Super G Unisex Joggers sold the most units (308). Hoodies, sweatshirts, fleece,
@@ -73,7 +73,7 @@ November-through-January sample period.
 
 ### Traffic acquisition
 
-![Revenue by first-user acquisition source](charts/<your-acquisition-file>.png)
+![Revenue by first-user acquisition source](charts/traffic-acquisition.png)
 
 Google organic produced the most recorded revenue ($95,775), followed by
 direct traffic ($79,650). Referral traffic from the merchandise store domain
